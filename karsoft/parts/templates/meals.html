@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<style>
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Text:100, 300, 400, 500, 600, 700, 800, 900&display=swap');
+
+/* font-family: 'Big Shoulders Text', cursive; */
+.body {background-color: RGB(249, 201, 16)
+}
+}
+.nav-flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-flex-row li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 20px 15px;
+}
+
+.nav-flex-row li a {
+    font-family: 'Big Shoulders Text', cursive;
+    color: #000;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.nav-flex-row li a:hover{
+    background: #E7E7E7;
+}
+
+.section-intro {
+    height: 820px;
+<!--    background-image: url(img/foddiee.png);-->
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-intro h1 {
+    text-align: center;
+    color: #000;
+    font-size: 4em;
+    font-weight: 700;
+}
+
+.section-intro header {
+    display: flex;
+    flex: 4;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+	</style>
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+            initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity=
+"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <title>Restaurant Website</title>
+</head>
+
+<body class="body">
+
+    <section class="section-intro">
+        <header>
+            <h1> Welcome To Fooddddie's
+                Kitchen</h1>
+        </header>
+    </section>
+</body>
+
+
+ {% for p in meals %}
+
+    <ul style="list-style: none;">
+        <li>{{ p.title }} </li> <br>
+        <li>{{ p.ingridients }} </li><br>
+
+        <li>
+            <img src="/static/images/{{ p.title }}.jpg" style="width:700px;height:400px;">
+        </li>
+    </ul> <hr>
+
+{% endfor %}
+
+
+{%endblock%}

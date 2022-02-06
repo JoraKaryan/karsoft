@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<br><br>
+<br><br>
+
+
+{% for i in reserve %}
+<hr>
+ <ul style="list-style: none;">
+        <li>{{ i.name }} </li> <br>
+        <li>{{ i.phone }} </li><br>
+        <li>{{ i.input_date }} </li><br>
+ </ul>
+<hr>
+
+{% endfor %}
+{%endblock%}
